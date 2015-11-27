@@ -18,5 +18,35 @@
         "service": "all",
         "date": "Fri Nov 27 2015 13:21:49 GMT+0300 (MSK)",
         "id": 2
+    },
+    {
+        "title": "Node.js Event Emitter",
+        "imageSrc": "http://www.tutorialspoint.com/nodejs/images/nodejs-mini-logo.jpg",
+        "text": "Advertisements\nMany objects in Node emit events for example a net.Server emits an event each time a peer connects to it, a fs.readStream emits an even",
+        "url": "http://www.tutorialspoint.com/nodejs/nodejs_event_emitter.htm",
+        "comment": "What a cool article",
+        "service": "all",
+        "date": "Fri Nov 27 2015 13:21:49 GMT+0300 (MSK)",
+        "id": 3
+    },
+    {
+        "title": "Node.js Streams",
+        "imageSrc": "http://www.tutorialspoint.com/nodejs/images/nodejs-mini-logo.jpg",
+        "text": "Advertisements\nWhat are Streams?Streams are objects that let you read data from a source or write data to a destination in continous fashion. In Node.",
+        "url": "http://www.tutorialspoint.com/nodejs/nodejs_streams.htm",
+        "comment": "Ohohoh",
+        "service": "all",
+        "date": "Fri Nov 27 2015 16:32:52 GMT+0300 (MSK)",
+        "id": 4
+    },
+    {
+        "title": "Node.js Streams",
+        "imageSrc": "http://www.tutorialspoint.com/nodejs/images/nodejs-mini-logo.jpg",
+        "text": "Advertisements\nWhat are Streams?Streams are objects that let you read data from a source or write data to a destination in continous fashion. In Node.",
+        "url": "http://www.tutorialspoint.com/nodejs/nodejs_streams.htm",
+        "comment": "wow",
+        "service": "all",
+        "date": "Fri Nov 27 2015 16:33:43 GMT+0300 (MSK)",
+        "id": 5
     }
 ]

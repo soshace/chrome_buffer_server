@@ -1,10 +1,18 @@
 var express = require('express'),
+    https = require('https'),
+    http = require('http'),
     bodyParser = require('body-parser'),
     app = express(),
     fs = require('fs'),
     _ = require('underscore'),
     fakeDB
     ;
+
+var options = {
+    key: fs.readFileSync('key.pem'),
+    cert: fs.readFileSync('cert.pem')
+};
+
 
 app.get('/posts', function (req, res) {
     fakeDB = require('./posts.json');
@@ -64,11 +72,16 @@ app.delete('/posts/:id', function (req, res) {
     });
 });
 
+var httpServer = http.createServer(app);
+var httpsServer = https.createServer(options, app);
 
-var server = app.listen(8081, function () {
-    var host, port;
-    host = server.address().address;
-    port = server.address().port;
+httpServer.listen(8080);
+httpsServer.listen(8081);
 
-    console.log("Example app listening at http://%s:%s", host, port)
-});
+//var server = app.listen(8081, function () {
+//    var host, port;
+//    host = server.address().address;
+//    port = server.address().port;
+//
+//    console.log("Example app listening at http://%s:%s", host, port)
+//});
