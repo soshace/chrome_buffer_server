@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Встреча с Патриархом Московским и всея Руси Кириллом",
+        "imageSrc": "https://external-ams2-1.xx.fbcdn.net/safe_image.php?d=AQDLYb71VajhGLF7&w=470&h=246&url=http%3A%2F%2Fstatic.kremlin.ru%2Fmedia%2Fevents%2Fphotos%2Fmedium%2FxTldpN3MXNQRDzVWRWq9xzTwlAQaIaqs.jpg&cfs=1&upscale=1&sx=0&sy=0&sw=680&sh=356",
+        "text": "Владимир Путин встретился с Патриархом Московским и всея Руси Кириллом. Глава государства поздравил предстоятеля...",
+        "url": "http://l.facebook.com/l.php?u=http%3A%2F%2Fwww.kremlin.ru%2Fevents%2Fpresident%2Fnews%2F50741%3Futm_content%3Dbuffer121f4%26utm_medium%3Dsocial%26utm_source%3Dfacebook.com%26utm_campaign%3Dbuffer&h=HAQEuHu8o&enc=AZM8axRDbKI2KJWRx1hHzLVFc4VTUtOiiNGX3xGancrhsPATmWmHapuN4H56p3pdYDvqOha3yCAqeaKHr208siNRUjDIdo0R5DX2kxgHV1FdO0E1Fyjkh7Ot1HynDKFB_sxb3KaExkf8Qelng1PRon8VyCxAHZolxWSnoPN8NdDuhiLbe-mR5XXFWFrUA6KeFf5VdEbKj0W113YDK0532leh&s=1",
+        "comment": "adsfasdf",
+        "service": "facebook",
+        "date": "\"2015-11-27T09:28:46.767Z\"",
+        "id": 1
+    },
+    {
+        "title": "Node.js Event Emitter",
+        "imageSrc": "http://www.tutorialspoint.com/nodejs/images/nodejs-mini-logo.jpg",
+        "text": "Advertisements\nMany objects in Node emit events for example a net.Server emits an event each time a peer connects to it, a fs.readStream emits an even",
+        "url": "http://www.tutorialspoint.com/nodejs/nodejs_event_emitter.htm",
+        "comment": "What a cool article",
+        "service": "all",
+        "date": "Fri Nov 27 2015 13:21:49 GMT+0300 (MSK)",
+        "id": 2
+    }
+]
