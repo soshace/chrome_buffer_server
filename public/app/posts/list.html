@@ -1,0 +1,10 @@
+<div ng-repeat="post in posts">
+    <h3>{{post.title}}</h3>
+    <h6>{{post.date}}</h6>
+    <img src="{{post.imageSrc}}" alt=""/>
+    <p>{{post.text}}</p>
+    <a href="{{post.url}}">{{post.url}}</a>
+    <br/>
+    Comment: <p>{{post.comment}}</p>
+    <hr/>
+</div>

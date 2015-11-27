@@ -2,6 +2,7 @@ var express = require('express'),
     https = require('https'),
     http = require('http'),
     bodyParser = require('body-parser'),
+    morgan = require('morgan'),
     app = express(),
     fs = require('fs'),
     _ = require('underscore'),
@@ -12,7 +13,9 @@ var options = {
     key: fs.readFileSync('key.pem'),
     cert: fs.readFileSync('cert.pem')
 };
+app.use(morgan('combined'));
 
+app.use("/", express.static(__dirname + '/public'));
 
 app.get('/posts', function (req, res) {
     fakeDB = require('./posts.json');
@@ -77,11 +80,3 @@ var httpsServer = https.createServer(options, app);
 
 httpServer.listen(8080);
 httpsServer.listen(8081);
-
-//var server = app.listen(8081, function () {
-//    var host, port;
-//    host = server.address().address;
-//    port = server.address().port;
-//
-//    console.log("Example app listening at http://%s:%s", host, port)
-//});
