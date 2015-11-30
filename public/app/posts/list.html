@@ -1,10 +1,20 @@
-<div ng-repeat="post in posts">
-    <h3>{{post.title}}</h3>
-    <h6>{{post.date}}</h6>
-    <img src="{{post.imageSrc}}" alt=""/>
-    <p>{{post.text}}</p>
-    <a href="{{post.url}}">{{post.url}}</a>
-    <br/>
-    Comment: <p>{{post.comment}}</p>
-    <hr/>
+<div class="update-content" ng-repeat="post in posts">
+    <div class="message">
+        {{post.comment}}
+    </div>
+    <div class="attachments">
+        <div class="attachment link">
+            <div class="link-thumbnail">
+                <img src="{{post.imageSrc}}">
+
+            </div>
+
+            <div class="link-meta ">
+                <a class="link-title" href="{{post.url}}" target="_blank">{{post.title}}</a>
+                <a class="link-url" href="{{post.url}}" target="_blank">{{post.url}}</a>
+
+                <p class="link-description">{{post.text}}</p>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,0 +1,95 @@
+body {
+    background-color: white;
+}
+
+.post-container {
+    margin: auto;
+    max-width: 600px;
+
+    .update-content {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        position: relative;
+        margin-left: 52px;
+        width: 687px;
+        border: 1px solid #ced7df;
+        background: #fff;
+        border-radius: 3px;
+        background-clip: padding-box;
+        padding: 15px;
+        margin-bottom: 15px;
+
+        .message {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 15px;
+            line-height: 1.5em;
+            color: #555;
+            word-wrap: break-word;
+            -webkit-transition: background .2s ease-in-out, min-height .1s linear, max-height .1s linear;
+            transition: background .2s ease-in-out, min-height .1s linear, max-height .1s linear;
+        }
+
+        .attachments {
+            .attachment {
+                position: relative;
+                padding: 10px 0;
+                min-height: 0;
+                margin-top: 5px;
+                overflow: hidden;
+                line-height: 1.6;
+
+                .link-meta {
+                    margin-left: 120px;
+
+                    .link-title {
+                        font-weight: 700;
+                        cursor: auto;
+                        display: block;
+                        color: #323b43;
+                        margin: -5px;
+                        padding: 5px;
+                    }
+
+                    .link-url {
+                        font-size: 12px;
+                        line-height: 1.8;
+                        color: #59626a;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+
+                    .link-description {
+                        color: #59626a;
+                        line-height: 1.4;
+                        font-size: 12px;
+                        text-align: left;
+                        margin: -5px;
+                        padding: 10px 5px;
+                    }
+                }
+
+                &.link {
+                    padding: 15px;
+                    border-top: 1px solid #f4f7f9;
+                    .link-thumbnail {
+                        float: left;
+                        position: relative;
+                        max-height: 100px;
+                        overflow: hidden;
+                        img {
+                            display: block;
+                            border-radius: 3px;
+                            width: 111px;
+                            height: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
