@@ -13,7 +13,7 @@
                 <a class="link-title" href="{{post.url}}" target="_blank">{{post.title}}</a>
                 <a class="link-url" href="{{post.url}}" target="_blank">{{post.url}}</a>
 
-                <p class="link-description">{{post.text}}</p>
+                <p class="link-description">{{post.text | limitTo: 200}}</p>
             </div>
         </div>
     </div>
