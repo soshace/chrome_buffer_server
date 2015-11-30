@@ -1,4 +1,5 @@
 <div class="update-content" ng-repeat="post in posts">
+    <div class="service-logo service-logo--{{post.service}}"></div>
     <div class="message">
         {{post.comment}}
     </div>
@@ -6,7 +7,6 @@
         <div class="attachment link">
             <div class="link-thumbnail">
                 <img src="{{post.imageSrc}}">
-
             </div>
 
             <div class="link-meta ">
