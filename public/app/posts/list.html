@@ -6,7 +6,13 @@
     <div class="attachments">
         <div class="attachment link">
             <div class="link-thumbnail">
-                <img src="{{post.imageSrc}}">
+                <div ng-if="post.imageSrc">
+                  <img src="{{post.imageSrc}}">
+                </div>
+                
+                <div ng-if="!post.imageSrc">
+                      <img src="{{post.imageSources[0]}}" alt="" />
+                </div>
             </div>
 
             <div class="link-meta ">
