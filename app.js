@@ -27,6 +27,7 @@ db.once('open', function() {
 //model
 var User = mongoose.model('User', { email: String, password: String });
 
+app.set('view engine', 'jade');
 
 
 //uses
@@ -46,37 +47,23 @@ app.use(session({
   saveUninitialized: false
 }))
 
-//
-// app.use(express.session({
-//     secret: 'a4f8071f-c873-4447-8ee2',
-//     cookie: { maxAge: 2628000000 },
-//     store: new (require('express-sessions'))({
-//         storage: 'mongodb',
-//         instance: mongoose, // optional
-//         host: 'localhost', // optional
-//         port: 27017, // optional
-//         db: 'test', // optional
-//         collection: 'sessions', // optional
-//         expire: 86400 // optional
-//     })
-// }));
 
-// //session check
-//
-// function loadUser(req, res, next) {
-//   if (req.session.user_id) {
-//     User.findById(req.session.user_id, function(user) {
-//       if (user) {
-//         req.currentUser = user;
-//         next();
-//       } else {
-//         res.redirect('/login');
-//       }
-//     });
-//   } else {
-//     res.redirect('/login');
-//   }
-// }
+//session check
+
+function loadUser(req, res, next) {
+  if (req.session.user_id) {
+    User.findById(req.session.user_id, function(user) {
+      if (user) {
+        req.currentUser = user;
+        next();
+      } else {
+        res.redirect('/login');
+      }
+    });
+  } else {
+    res.redirect('/login');
+  }
+}
 
 
 
@@ -87,7 +74,7 @@ app.use(session({
 
 //routes
 
-app.get("/", express.static(__dirname + '/public'));
+// app.use("/", express.static(__dirname + '/public'));
 //
 //
 // app.get('/login', function (req, res) {
@@ -95,10 +82,36 @@ app.get("/", express.static(__dirname + '/public'));
 //     res.writeHead(200, {'Content-Type': 'text/plain; charset=utf8'});
 //     res.end(JSON.stringify(fakeDB, null, 4));
 // });
+app.get('/login', function(req, res){
+   res.render('login', { title: 'Hey', message: 'Hello there!'});
+});
 
+app.post('/login', function(req, res){
+  console.log(req.body);
+
+  if (req.body.password && req.body.email) {
+      User.find( { email: req.body.email }, function(err, users) {
+        if (users.length) {
+
+          if (users[0].password==req.body.password){
+            res.writeHead(200, {'Content-Type': 'text/plain; charset=utf8'});
+            res.end('login succefull');
+          } else {
+            res.writeHead(400, {'Content-Type': 'text/plain; charset=utf8'});
+            res.end('Wrong password');
+          }
+
+        } else {
+          res.writeHead(400, {'Content-Type': 'text/plain; charset=utf8'});
+          res.end('Bad credentials');
+        }
+      });
+  }
+
+
+});
 
 app.post('/user', function(req, res) {
-  console.log(req.body);
 
   if (req.body.password && req.body.email) {
     //check if user already registered
@@ -129,13 +142,13 @@ app.post('/user', function(req, res) {
   }
 });
 
-app.get('/posts', function (req, res) {
+app.get('/posts', loadUser, function (req, res) {
     fakeDB = require('./posts.json');
     res.writeHead(200, {'Content-Type': 'text/plain; charset=utf8'});
     res.end(JSON.stringify(fakeDB, null, 4));
 });
 
-app.get('/posts/:id', function (req, res) {
+app.get('/posts/:id', loadUser, function (req, res) {
     var user,
         id = parseInt(req.params.id)
         ;
@@ -150,7 +163,7 @@ app.get('/posts/:id', function (req, res) {
     }
 });
 
-app.put('/posts', [
+app.put('/posts', loadUser, [
     bodyParser.json(),
     function (req, res) {
         var last, newPost;
@@ -173,7 +186,7 @@ app.put('/posts', [
     }
 ]);
 
-app.delete('/posts/:id', function (req, res) {
+app.delete('/posts/:id', loadUser, function (req, res) {
     var id = parseInt(req.params.id);
     fakeDB = require('./posts.json');
 

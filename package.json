@@ -17,7 +17,8 @@
     "underscore": "^1.8.3",
     "mongoose": "^4.3.5",
     "connect-mongo": "*",
-    "express-session": "*"
+    "express-session": "*",
+    "jade": "*"
   },
   "repository": {
   "type": "git",
