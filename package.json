@@ -14,6 +14,13 @@
     "express": "^4.13.3",
     "morgan": "^1.6.1",
     "serve-static": "^1.10.0",
-    "underscore": "^1.8.3"
-  }
+    "underscore": "^1.8.3",
+    "mongoose": "^4.3.5",
+    "connect-mongo": "*",
+    "express-session": "*"
+  },
+  "repository": {
+  "type": "git",
+  "url": "git://github.com/ruspython/chrome_buffer_server.git"
+}
 }
