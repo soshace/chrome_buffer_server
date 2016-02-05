@@ -1,0 +1,13 @@
+{
+  "express": {
+    "http": {
+      "port": 8080
+    },
+    "https": {
+      "port": 8081
+    }
+  },
+  "mongoose": {
+    "db": "mongodb://localhost/test"
+  }
+}
