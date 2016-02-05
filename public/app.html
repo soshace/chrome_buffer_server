@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="posts">
+<html lang="en" ng-app="bufferApp">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/styles.css"/>
     <title></title>
+    <base href="/">
 </head>
 <body>
 
-<div class="post-container">
-    <posts/>
-</div>
+<div ng-view></div>
+
 
 <!-- Angular-->
 <script src="assets/js/angular.js"></script>
 <script src="assets/js/angular-route.js"></script>
+
 <!-- Product module files -->
+<script src="app/app.js"></script>
 <script src="app/posts.js"></script>
-<script src="app/routes.js"></script>
+<script src="app/users.js"></script>
+
 <script src="app/posts/list.controller.js"></script>
-<script src="app/posts/directives.js"></script>
 <script src="app/posts/service.js"></script>
+
+<script src="app/users/login.controller.js"></script>
+<script src="app/users/service.js"></script>
+
 </body>
 </html>
