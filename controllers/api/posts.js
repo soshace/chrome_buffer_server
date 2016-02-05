@@ -37,6 +37,8 @@ router.get('/posts/:id', function(req, res) {
 
 // todo: investigate why bodyParser.json[] was used before in `put`
 router.put('/posts', function (req, res) {
+    if (!req.user) { return res.sendStatus(401); }
+
     var last, newPost;
 
     var fakeDB = require('../../posts.json');
@@ -45,10 +47,11 @@ router.put('/posts', function (req, res) {
     });
     newPost = req.body;
     newPost.id = last.id + 1;
+    newPost.user_id = req.user._id.toString();
     fakeDB.push(newPost);
 
     console.log(newPost);
-    fs.writeFile('../../posts.json', JSON.stringify(fakeDB, null, 4), function (err) {
+    fs.writeFile('posts.json', JSON.stringify(fakeDB, null, 4), function (err) {
         if (err) throw err;
         console.log('It\'s saved!');
         res.writeHead(200, {'Content-Type': 'text/plain; charset=utf8'});
