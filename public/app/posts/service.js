@@ -3,21 +3,31 @@
 
     angular
         .module('posts.services')
-        .factory('Posts', Posts);
+        .factory('Posts', ['$http', '$location', function($http, $location) {
+            var Posts = {
+                    all: all
+                },
+                API_ENDPOINT = $location.protocol() + '://' + $location.host() + ':' + $location.port();
 
-    Posts.$inject = ['$http'];
+            return Posts;
 
-    function Posts($http) {
-        var Posts = {
-                all: all
-            },
-            API_ENDPOINT = 'http://127.0.0.1:8080';
+            function all() {
+                return $http.get(API_ENDPOINT + '/api/posts/');
+            }
+        }]);
 
-        return Posts;
+    angular
+        .module('posts.services')
+        .factory('User', ['$http', '$location', function($http, $location) {
+            var User = {
+                    getEmail: getEmail
+                },
+                API_ENDPOINT = $location.protocol() + '://' + $location.host() + ':' + $location.port();
 
-        function all() {
-            return $http.get(API_ENDPOINT+'/posts');
-        }
+            return User;
 
-    }
+            function getEmail() {
+                return $http.get(API_ENDPOINT + '/api/email/');
+            }
+        }]);
 })();
