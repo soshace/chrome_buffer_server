@@ -13,7 +13,8 @@ var express  = require('express'),
     passport = require('passport'),
     path     = require('path'),
     _        = require('underscore'),
-    appDir   = path.dirname(require.main.filename);
+    appDir   = path.dirname(require.main.filename),
+    hash     = require('../../utils/hash');
 
 
 router.use(['/register', '/login'], function (req, res, next) {
@@ -26,13 +27,18 @@ router.use(['/register', '/login'], function (req, res, next) {
 
 
 router.post('/register', function(req, res, next) {
-    var user = new User({ username: req.body.email, password: req.body.password });
-
-    user.save(function(err) {
-        if (err) { return next(err); }
-        req.login(user, function(err) {
-            if (err) { return next(err); }
-            res.sendStatus(200);
+    hash(req.body.password, function(err, salt, hash){
+        if(err) { return next(err); }
+        User.create({
+            username : req.body.email,
+            salt : salt,
+            hash : hash
+        }, function(err, user){
+            if (err) { return next(err) };
+            req.login(user, function(err) {
+                if (err) { return next(err); }
+                res.sendStatus(200);
+            });
         });
     });
 });
