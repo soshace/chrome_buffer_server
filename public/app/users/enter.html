@@ -1,0 +1,39 @@
+<div ng-controller="SignUpFormController" class="enter-form">
+    <form name="form" novalidate>
+        <div class="content">
+            <div class="welcome-wrapper">
+                <span class="welcome">Sign In or Sign Up</span>
+            </div>
+            <div class="row">
+                <input
+                        id="emailField"
+                        class="form-input"
+                        ng-class="{true: 'error', false: ''}[inputError]"
+                        ng-focus="resetInputError()"
+                        type="text"
+                        name="email"
+                        placeholder="Your Email Address"
+                        ng-model="user.email"
+                        required
+                /><br/>
+            </div>
+            <div class="row">
+                <input
+                        id="passwordField"
+                        class="form-input"
+                        ng-class="{true: 'error', false: ''}[inputError]"
+                        ng-focus="resetInputError()"
+                        type="password"
+                        name="password"
+                        placeholder="Your Password"
+                        ng-model="user.password"
+                        required
+                />
+            </div>
+            <div class="submit-actions">
+                <input type="button" value="Create Account" id="create-account" ng-click="createAccount()"/>
+                <input type="button" value="Sign In" id="sign-in-account" ng-click="signIn()"/>
+            </div>
+        </div>
+    </form>
+</div>
