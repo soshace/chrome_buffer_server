@@ -69,7 +69,7 @@ div .update-content .attachments .attachment .link-meta .link-description {
 }
 div .update-content .attachments .attachment.link {
   padding: 15px;
-  border-top: 1px solid #f4f7f9;
+  //border-top: 1px solid #f4f7f9;
 }
 div .update-content .attachments .attachment.link .link-thumbnail {
   float: left;
