@@ -1,4 +1,8 @@
-This installation guide is for Mac OS X.
+A backend for Chrome Extension for sharing posts
+------------------------------------------------
+#### To install server part please follow next instructions:
+
+*This installation guide is for Mac OS X.*
 
 Firstly, it's needed to install [`brew`](http://brew.sh/) package manager. Please enter in terminal following command:
 ```sh
@@ -40,13 +44,15 @@ Please go to the project's folder and install npm packages:
 $ npm install
 ```
 
-Then please generate keys and certificate for using https:
+Then please generate keys and certificate for using https (or leave generated before):
 ```javascript
 openssl genrsa -out key.pem
 openssl req -new -key key.pem -out csr.pem
 openssl x509 -req -days 9999 -in csr.pem -signkey key.pem -out cert.pem
 rm csr.pem
 ```
+
+*Also there are valid `key.pem` and `cert.pem` files under `keys` folder for testing purposes only*
 
 Start it:
 ```javascript

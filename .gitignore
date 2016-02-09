@@ -1,5 +1,5 @@
 node_modules
 posts.json
 .idea
-*.pem
+/*.pem
 /.DS_Store
