@@ -2,3 +2,4 @@ node_modules
 posts.json
 .idea
 *.pem
+/.DS_Store
