@@ -16,5 +16,6 @@ router.use('/posts', require('./posts'));
 
 router.use('/api', require('./api/posts'));
 router.use('/api', require('./api/users'));
+router.use('/api', require('./api/folders'));
 
 module.exports = router;
