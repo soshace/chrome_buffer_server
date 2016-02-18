@@ -1,3 +1,7 @@
+html {
+  overflow-y: scroll;
+}
+
 body {
   background-color: white;
 }
@@ -212,4 +216,17 @@ div.enter-form div.welcome-wrapper span.welcome {
 
 div.enter-form input.error {
   background-color: rgb(255, 204, 204);
+}
+
+span.folder-tag {
+  padding: 3px;
+  cursor: pointer;
+  border: 1px solid #dcdcdc;
+  background-color: whitesmoke;
+  margin: 3px;
+}
+
+span.folder-tag.selected {
+  border-color: #8fc9f4;
+  background-color: #d9edfb;
 }

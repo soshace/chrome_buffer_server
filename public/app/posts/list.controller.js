@@ -4,6 +4,8 @@
     angular.module('posts.controllers').controller('PostsController', [
         '$scope', '$http', '$location', 'Posts', 'User', function ($scope, $http, $location, Posts, User) {
             $scope.posts = [];
+            $scope.folders = [];
+            $scope.currentFolder = undefined;
             $scope.user = {};
             $scope.user.email = "";
 
@@ -30,6 +32,10 @@
 
             function getPostsSuccessCallback(res, status, headers, config) {
                 $scope.posts = res.data;
+                $scope.folders = _.reduce(res.data, function(folders, post) {
+                    if (post.folder) { folders.push(post.folder); }
+                    return _.uniq(folders);
+                }, []);
             }
 
             function getPostsFailCallback(data, status, headers, config) {
