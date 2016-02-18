@@ -36,6 +36,7 @@
                     if (post.folder) { folders.push(post.folder); }
                     return _.uniq(folders);
                 }, []);
+                $scope.folders.unshift('All');
             }
 
             function getPostsFailCallback(data, status, headers, config) {
