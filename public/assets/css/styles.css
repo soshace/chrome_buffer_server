@@ -219,6 +219,7 @@ div.enter-form input.error {
 }
 
 span.folder-tag {
+  display: inline-block;
   padding: 3px;
   cursor: pointer;
   border: 1px solid #dcdcdc;
