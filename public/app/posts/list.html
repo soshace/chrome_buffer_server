@@ -4,11 +4,17 @@
 </div>
 <div class="update-content" ng-init="currentFolder = { folder: 'All' }">
     <span
-        class="folder-tag"
-        ng-class="{ 'selected': currentFolder.folder === folder }"
+        ng-class="{
+            'selected': currentFolder.folder === folder && folders.length !== 1,
+            'folder-tag': folders.length !== 1
+        }"
         ng-repeat="folder in folders"
         ng-click="currentFolder.folder = folder">
-            {{ folder === 'All' ? '' : '#' }}{{folder}}
+            {{ folders.length === 1
+                   ?
+               'You have no saved posts yet!'
+                   :
+               folder === 'All' ? folder : '#' + folder }}
     </span>
 
 </div>
