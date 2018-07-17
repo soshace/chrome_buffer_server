@@ -1,3 +1,5 @@
+Network for professionals [Soshace](https://soshace.com)
+
 A backend for Chrome Extension for sharing posts
 ------------------------------------------------
 #### To install server part please follow next instructions:
